@@ -1,0 +1,32 @@
+﻿@model WebAppHW03.Models.ListOfContacts
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetEveryone</title>
+</head>
+<body>
+    @* GetEveryone View. Returns the total contact list of the User.
+        Also can include any new contact the user adds.*@
+
+    <h2><u><b>Hellinho's mighty list of contacts :P</b></u></h2>
+    <br />
+    <ul>
+        @{ 
+            foreach (var item in Model.MyContacts)
+            {
+                <li>
+                    FirstName: <b>@item.FirstName</b>,
+                    LastName: <b>@item.LastName</b>,
+                    PhoneNumber: <b>@item.PhoneNumber</b>
+                </li>
+            }
+        }
+    </ul>
+</body>
+</html>
